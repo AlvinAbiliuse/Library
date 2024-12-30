@@ -1,0 +1,40 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	line-height: 1.3em;
+	outline: 1px solid red;
+	font-family: sans-serif;
+}
+
+body {
+	background: lightblue;
+	margin: 50px 0;
+}
+
+.contentContainer {
+	display: grid;
+	grid-template-columns: 1fr[content-start] 6fr [content-end] 1fr;
+}
+
+body > .content {
+	grid-column: content;
+}
+
+section {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}	
+
+.card {
+	padding: 30px ;
+	margin: 15px;
+	background: white;
+	font-size: 1.4em;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px gray;
+	border-left: 10px solid pink;
+	
+	
+
+}
+	
