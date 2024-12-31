@@ -13,7 +13,7 @@ function addToDom(library) {
 	let containerEl = document.querySelector("#container");
 	if (library.length > 0) {
 		for (i in library) {
-			let newCard = document.createElement("div")
+			let newCard = document.createElement("div");
 			newCard.className = "card";
 			let cardContent = document.createElement("p");
 			cardContent.textContent = library[i];
@@ -23,5 +23,10 @@ function addToDom(library) {
 	}
 }
 
-
 addToDom(myLibrary);
+
+const modal = document.querySelector("#modal");
+const openBtn = document.querySelector(".addButton");
+const closeBn = document.querySelector(".closeButton");
+
+openBtn.addEventListener("click", () => modal.showModal());
