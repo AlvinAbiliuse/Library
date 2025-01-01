@@ -42,7 +42,7 @@ function addToDom(library) {
 			
 			let cardContentFour = document.createElement("p");
 			cardContentFour.className = "read";
-			if (library[i].read == "on") {
+			if (library[i].read == "on" || library[i].read == "") {
 				cardContentFour.textContent = "Read: No";
 			} else {
 				cardContentFour.textContent = "Read: Yes";

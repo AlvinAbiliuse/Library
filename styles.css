@@ -39,10 +39,20 @@ body {
 	box-shadow: 1px 1px 5px gray;
 	border-left: 10px solid pink;
 	button {
-		background:lightblue;
-		font-size: 14px;
+		font-size: 16px;
 		margin: 10px;
-		
+	}
+	.remove {
+		background: #ff4141;
+	}
+	.remove:hover {
+		background: #ff5e5e;
+	}
+	.change {
+		background: #56b2ff;
+	}
+	.change:hover {
+		background: #9ed3ff;	
 	}
 
 }
