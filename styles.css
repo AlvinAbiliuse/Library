@@ -27,7 +27,7 @@ body {
 
 #container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(200px, 470px));
 }	
 
 .card {
@@ -38,6 +38,12 @@ body {
 	border-radius: 10px;
 	box-shadow: 1px 1px 5px gray;
 	border-left: 10px solid pink;
+	button {
+		background:lightblue;
+		font-size: 14px;
+		margin: 10px;
+		
+	}
 
 }
 
@@ -64,22 +70,38 @@ button:hover {
 .modal {
 	margin: auto;
 	max-width: 100ch;
-
-.form{
-	padding: 20px;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	* {
-		margin: 5px;
-		padding: 5px;
+	border: none;
+	border-radius: 20px;
+	
+	.form{
+		padding: 20px;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		* {
+			margin: 5px;
+			padding: 5px;
+		}
+		label {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		input {
+			border: 1px solid gray;
+			border-radius: 10px;
+			outline: none;
+		}
+		.closeButton {
+			background: lightgray;
+			font-size: 15px;
+			font-weight: bold;
+			color: ;
+		}
 	}
-	label {
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-	}
-	input {
-		border: 1px solid gray;
-		border-radius: 10px;
-		outline: none;
 }
+.modal::backdrop {
+		background: rgb(0 0 0 / 50%);
+	}
+
