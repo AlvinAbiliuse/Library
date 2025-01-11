@@ -4,6 +4,18 @@ function Book() {
 
 }
 
+function bookConstructor(e) {
+	this.book = {title: e.target[0].value,
+				 author: e.target[1].value,
+				 pages: e.target[2].value,
+				 read: e.target[3].value,};
+	e.target[0].value = "";
+	e.target[1].value = "";
+	e.target[2].value = "";
+	e.target[3].value = "";
+}
+	
+	
 
 function addBookToLibrary(e) {
 	let tempObj = new Object();
