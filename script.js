@@ -1,9 +1,5 @@
 const myLibrary = [];
 
-function Book() {
-
-}
-
 function bookConstructor(e) {
 	this.book = {title: e.target[0].value,
 				 author: e.target[1].value,
@@ -14,28 +10,6 @@ function bookConstructor(e) {
 	e.target[2].value = "";
 	e.target[3].value = "";
 
-}
-	
-	
-
-function addBookToLibrary(e) {
-	let tempObj = {
-					title: e.target[0].value,
-					author: e.target[1].value,
-					pages: e.target[2].value,
-					read: e.target[3].value 
-	}
-/*
-	e.target[0].value = "";
-	e.target[1].value = "";
-	e.target[2].value = "";
-	e.target[3].value = "";
-
-*/
-	myLibrary.push(tempObj);
-	console.log(myLibrary);
-	addToDom([myLibrary[myLibrary.length -1]]);
-	
 }
 
 function addToDom(library) {
@@ -88,9 +62,10 @@ const formEl = document.querySelector("form");
 
 openBtn.addEventListener("click", () => modal.showModal());
 formEl.addEventListener("submit", (e) => {
-						addBookToLibrary(e);
 						let tt = new bookConstructor(e);
-						console.log(tt.book);
+						myLibrary.push(tt.book);
+						addToDom([myLibrary[myLibrary.length -1]]);
+	
 						modal.close()
 });
 
@@ -98,16 +73,10 @@ let cardContainer = document.querySelector(".content");
 cardContainer.addEventListener("click", (e) => {
 		if (e.target.className == "remove") {
 			for (i in myLibrary) {
-				console.log("hi");
 				if (myLibrary[i]["title"] == e.target.parentNode.
 					parentNode.querySelector("h4").textContent.
 					replace("Title: ", "")) {
-						console.log(myLibrary);
-						console.log(typeof i);
-						myLibrary.splice(Number(i), 0);
-						console.log(myLibrary);
-				} else {
-					console.log("nyet");
+						myLibrary.splice(Number(i), 1);
 				}
 			}
 			e.target.parentNode.parentNode.remove();
